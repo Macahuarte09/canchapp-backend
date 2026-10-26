@@ -2,7 +2,7 @@
 
 API de CanchApp, una app para reservar turnos de canchas de pádel y pelota paleta. Hecha como trabajo final para la Práctica Supervisada (PPS).
 
-El frontend que usa esta API está en: https://github.com/TU_USUARIO/canchapp-frontend
+El frontend que usa esta API está en: https://github.com/Macahuarte09/canchapp-frontend
 
 ## Links
 
@@ -45,7 +45,7 @@ Necesitás tener instalado Node.js y MySQL (yo usé XAMPP).
 ### 1. Clonar el repo
 
 ```bash
-git clone https://github.com/TU_USUARIO/canchapp-backend.git
+git clone https://github.com/Macahuarte09/canchapp-backend.git
 cd canchapp-backend
 npm install
 ```
