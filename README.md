@@ -6,7 +6,7 @@ El frontend que usa esta API está en: https://github.com/Macahuarte09/canchapp-
 
 ## Links
 
-- API desplegada: https://canchapp-158d.vercel.app/api
+- API desplegada: https://canchapp-backend-4cdk-red.vercel.app/api
 - App: https://canchapp-blue.vercel.app
 
 ## Qué usé
