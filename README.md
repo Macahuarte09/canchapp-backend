@@ -1,46 +1,21 @@
 # CanchApp - Backend
 
-API de CanchApp, una app para reservar turnos de canchas de pádel y pelota paleta. Hecha como trabajo final para la Práctica Supervisada (PPS).
-
-El frontend que usa esta API está en: https://github.com/Macahuarte09/canchapp-frontend
-
-## Links
-
-- API desplegada: https://canchapp-backend-4cdk-red.vercel.app/api
-- App: https://canchapp-blue.vercel.app
-
-## Qué usé
+API REST para gestionar usuarios, canchas y reservas de pádel y pelota paleta. Trabajo final para la Práctica Supervisada (PPS).
 
 - Node.js + Express
-- MySQL
-- JWT (para el login) y bcryptjs (para encriptar las contraseñas)
+- MySQL (XAMPP / phpMyAdmin)
+- JWT para autenticación
+- Deploy en Vercel
 
-## Carpetas
+Frontend: https://github.com/Macahuarte09/canchapp-frontend
+API desplegada: https://canchapp-backend-4cdk-red.vercel.app/api
 
-```
-├── database/    ← el .sql con las tablas
-├── postman/     ← colección de Postman para probar la API
-├── src/
-│   ├── controllers/   ← la lógica de cada endpoint
-│   ├── routes/        ← las rutas
-│   └── db.js          ← conexión a MySQL
-└── index.js           ← archivo principal del servidor
-```
+## Requisitos
 
-## Base de datos
+- Node.js
+- MySQL (por ejemplo XAMPP)
 
-Son 4 tablas:
-
-- **usuarios**: nombre, email, contraseña (encriptada) y teléfono
-- **canchas**: nombre, tipo (padel o pelota_paleta), precio por hora y si está activa
-- **reservas**: qué usuario reservó qué cancha, fecha, hora de inicio y fin, y el estado (pendiente, confirmada o cancelada)
-- **pagos**: el pago de cada reserva (monto, método y estado)
-
-Relaciones: un usuario puede tener muchas reservas, una cancha puede tener muchas reservas, y una reserva puede tener pagos.
-
-## Cómo correrlo en tu compu
-
-Necesitás tener instalado Node.js y MySQL (yo usé XAMPP).
+## Configuración local
 
 ### 1. Clonar el repo
 
@@ -78,33 +53,6 @@ node index.js
 ```
 
 La API queda en http://localhost:3000
-
-## Endpoints
-
-### Usuarios
-
-| Método | Ruta | Qué hace |
-|--------|------|----------|
-| POST | `/api/usuarios/register` | Registra un usuario |
-| POST | `/api/usuarios/login` | Inicia sesión y devuelve un token |
-
-### Canchas
-
-| Método | Ruta | Qué hace |
-|--------|------|----------|
-| GET | `/api/canchas` | Trae todas las canchas |
-| POST | `/api/canchas` | Crea una cancha |
-| PUT | `/api/canchas/:id` | Modifica una cancha |
-| DELETE | `/api/canchas/:id` | Elimina una cancha |
-
-### Reservas
-
-| Método | Ruta | Qué hace |
-|--------|------|----------|
-| GET | `/api/reservas` | Trae todas las reservas |
-| GET | `/api/reservas/usuario/:id` | Trae las reservas de un usuario |
-| POST | `/api/reservas` | Crea una reserva (si el horario está ocupado, devuelve error) |
-| PUT | `/api/reservas/cancelar/:id` | Cancela una reserva |
 
 ## Postman
 
