@@ -21,12 +21,13 @@ app.use('/api/canchas', canchasRoutes);
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/reservas', reservasRoutes);
 
+app.get('/api', (req, res) => {
+  res.json({ mensaje: 'Bienvenidos a App de turnos de CANCHA' });
+});
+
+
 app.get('/', (req, res) => {
   res.json({ mensaje: 'Bienvenidos a App de turnos de CANCHA' });
 });
 
 module.exports = app;
-
-if (require.main === module) {
-  app.listen(process.env.PORT || 3000, () => console.log('Servidor corriendo'));
-}
